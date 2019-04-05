@@ -1,0 +1,215 @@
+@import "../../variables";
+
+// Bootstrap
+@import "../../bootstrap/functions";
+@import "../../bootstrap/variables";
+@import "../../bootstrap/grid";
+@import "../../bootstrap/breakpoints";
+
+// Button select (Section & Column)
+.blockit-section-button-select,
+.blockit-column-button-select {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    padding: 2px 4px;
+    font-family: $default-font;
+    font-size: 17px;
+    line-height: 1;
+    color: #fff;
+    cursor: pointer;
+    visibility: hidden;
+    background-color: $light-gray-700;
+    border-bottom-left-radius: 3px;
+    opacity: 0;
+    transition: .2s opacity, .2s visibility, .2s background-color;
+    z-index: 21;
+
+    svg {
+        width: auto;
+        height: 1em;
+    }
+}
+.blockit-section-button-select {
+    top: auto;
+    bottom: 100%;
+    margin-bottom: 14px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 0;
+}
+[data-type="blockit/section"]:hover > .editor-block-list__block-edit > div > div > .blockit-section-button-select,
+[data-type="blockit/section-column"]:hover > .editor-block-list__block-edit > div > div > .blockit-column-button-select {
+    visibility: visible;
+    opacity: 1;
+}
+.blockit-section-button-select:hover,
+.blockit-column-button-select:hover {
+    background-color: $blue-wordpress;
+}
+
+// Section-layout
+.blockit-section-layout {
+	padding: 25px;
+
+	.blockit-section-layout-picker {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-right: -7px;
+		margin-left: -7px;
+	
+		.blockit-section-layout-picker-btn {
+	
+			display: flex;
+			flex-wrap: wrap;
+			width: 85px;
+			padding: 0;
+			margin-right: 7px;
+			margin-bottom: 14px;
+			margin-left: 7px;
+			overflow: hidden;
+			cursor: pointer;
+			background: none;
+			border: 2px solid rgba($color-brand-3, .75);
+			border-radius: 4px;
+			transition: .15s border-color, .15s background-color;
+		
+			.blockit-col {
+				height: 40px;
+				border-right: 2px solid rgba($color-brand-3, .75);
+				transition: .15s border-color;
+			
+				&:last-of-type {
+					border-right: none;
+				}
+			}
+		
+			&:hover,
+			&:focus {
+				background-color: #fff;
+				border-color: $color-brand-3;
+		
+				.blockit-col {
+						border-color: $color-brand-3;
+				}
+			}
+		
+		}
+	}
+}
+
+// Columns style
+.wp-block-blockit-section { border: 1px dashed;
+	position: relative;
+	display: block;
+
+
+	> .editor-inner-blocks > .editor-block-list__layout { background: #cec7c757;
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		margin-left: 0;
+    margin-right: 0;
+	}
+}
+
+.blockit-col {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	width: 0;
+
+	> .editor-block-list__block-edit {
+		display: flex;
+		flex-basis: 100%;
+		// stylelint-disable-next-line
+		margin-top: 0 !important;
+		// stylelint-disable-next-line
+		margin-bottom: 0 !important;
+
+		> [data-block] {
+			flex: 100%;
+		}
+
+		// fix selected column block content position.
+		> .editor-block-contextual-toolbar + [data-block] {
+			margin-left: 30px;
+		}
+	}
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-down($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		// Provide basic `.col-{bp}` classes for equal-width flexbox columns
+		.blockit-col#{$infix} {
+				flex-basis: 0;
+				flex-grow: 1;
+				max-width: 100%;
+		}
+
+		// col size.
+		@for $i from 1 through $grid-columns {
+			.blockit-col#{$infix}-#{$i} {
+					@include make-col($i, $grid-columns);
+			}
+		}
+
+		// /// No need if col order option
+		// // col order.
+		// .blockit-col-order#{$infix}-first {
+		// 		order: -1;
+		// }
+		// .blockit-col-order#{$infix}-last {
+		// 		order: $grid-columns + 1;
+		// }
+
+		// @for $i from 0 through $grid-columns {
+		// 		.blockit-col-order#{$infix}-#{$i} {
+		// 				order: $i;
+		// 		}
+		// }
+
+	}
+}
+
+//// Only if there is section option for vertical alignment
+// Vertical align (all section 's columns).
+// .wp-block-blockit-section-align-items-center > .editor-inner-blocks > .editor-block-list__layout > .blockit-col > .editor-block-list__block-edit > [data-block] {
+// 	align-self: center;
+// }
+// .wp-block-blockit-section-align-items-end > .editor-inner-blocks > .editor-block-list__layout > .blockit-col > .editor-block-list__block-edit > [data-block] {
+// 	align-self: flex-end;
+// }
+
+// Vertical align (column).
+.wp-block-blockit-section > .editor-inner-blocks > .editor-block-list__layout > .blockit-col-align-self-start > .editor-block-list__block-edit > [data-block] {
+	align-self: flex-start;
+}
+.wp-block-blockit-section > .editor-inner-blocks > .editor-block-list__layout > .blockit-col-align-self-center > .editor-block-list__block-edit > [data-block] {
+	align-self: center;
+}
+.wp-block-blockit-section > .editor-inner-blocks > .editor-block-list__layout > .blockit-col-align-self-end > .editor-block-list__block-edit > [data-block] {
+	align-self: flex-end;
+}
+
+//// Only if column vertical align is responsive
+// // Vertical align (column).
+// @each $breakpoint in map-keys($grid-breakpoints) {
+// 	@include media-breakpoint-down($breakpoint) {
+// 			$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+// 			.wp-block-blockit-section > .editor-inner-blocks > .editor-block-list__layout > .blockit-col-align-self#{$infix}-start > .editor-block-list__block-edit > [data-block] {
+// 					align-self: flex-start;
+// 			}
+// 			.wp-block-blockit-section > .editor-inner-blocks > .editor-block-list__layout > .blockit-col-align-self#{$infix}-center > .editor-block-list__block-edit > [data-block] {
+// 					align-self: center;
+// 			}
+// 			.wp-block-blockit-section > .editor-inner-blocks > .editor-block-list__layout > .blockit-col-align-self#{$infix}-end > .editor-block-list__block-edit > [data-block] {
+// 					align-self: flex-end;
+// 			}
+// 	}
+// }

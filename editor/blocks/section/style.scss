@@ -1,0 +1,99 @@
+@import "../../variables";
+
+// Bootstrap
+@import "../../bootstrap/functions";
+@import "../../bootstrap/variables";
+@import "../../bootstrap/grid";
+@import "../../bootstrap/breakpoints";
+
+.wp-block-blockit-section { border: 1px dashed;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.blockit-col {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-down($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		// Provide basic `.col-{bp}` classes for equal-width flexbox columns
+		.blockit-col#{$infix} {
+				flex-basis: 0;
+				flex-grow: 1;
+				max-width: 100%;
+		}
+
+		// col size.
+		@for $i from 1 through $grid-columns {
+			.blockit-col#{$infix}-#{$i} {
+					@include make-col($i, $grid-columns);
+			}
+		}
+
+		// /// No need if col order option
+    // // col order.
+		// .blockit-col-order#{$infix}-first {
+		// 	order: -1;
+		// }
+
+		// .blockit-col-order#{$infix}-last {
+		// 	order: $grid-columns + 1;
+		// }
+
+		// @for $i from 0 through $grid-columns {
+		// 	.blockit-col-order#{$infix}-#{$i} {
+		// 			order: $i;
+		// 	}
+		// }
+	}
+}
+
+.blockit-col-content {
+	width: 100%;
+}
+
+// Vertical align (all section 's columns).
+.blockit-col > .blockit-col-content {
+	align-self: flex-start;
+}
+//// Only if there is section option for vertical alignment
+// .wp-block-blockit-section-align-items-center > .blockit-col > .blockit-col-content {
+// 	align-self: center;
+// }
+// .wp-block-blockit-section-align-items-end > .blockit-col > .blockit-col-content {
+// 	align-self: flex-end;
+// }
+
+// Vertical align (column).
+.wp-block-blockit-section > .blockit-col-align-self-start > .blockit-col-content {
+		align-self: flex-start;
+}
+.wp-block-blockit-section > .blockit-col.blockit-col-align-self-center > .blockit-col-content {
+		align-self: center;
+}
+.wp-block-blockit-section > .blockit-col.blockit-col-align-self-end > .blockit-col-content {
+		align-self: flex-end;
+}
+
+//// Only if column vertical align is responsive
+// // Vertical align (column).
+// @each $breakpoint in map-keys($grid-breakpoints) {
+// 	@include media-breakpoint-down($breakpoint) {
+// 			$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+// 			.wp-block-blockit-section > .blockit-col-align-self#{$infix}-start > .blockit-col-content {
+// 					align-self: flex-start;
+// 			}
+// 			.wp-block-blockit-section > .blockit-col.blockit-col-align-self#{$infix}-center > .blockit-col-content {
+// 					align-self: center;
+// 			}
+// 			.wp-block-blockit-section > .blockit-col.blockit-col-align-self#{$infix}-end > .blockit-col-content {
+// 					align-self: flex-end;
+// 			}
+// 	}
+// }

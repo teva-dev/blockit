@@ -1,0 +1,362 @@
+.blockit-section-button-select,
+.blockit-column-button-select {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  padding: 2px 4px;
+  font-family: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+  font-size: 17px;
+  line-height: 1;
+  color: #fff;
+  cursor: pointer;
+  visibility: hidden;
+  background-color: #ccd0d4;
+  border-bottom-left-radius: 3px;
+  opacity: 0;
+  transition: .2s opacity, .2s visibility, .2s background-color;
+  z-index: 21; }
+  .blockit-section-button-select svg,
+  .blockit-column-button-select svg {
+    width: auto;
+    height: 1em; }
+
+.blockit-section-button-select {
+  top: auto;
+  bottom: 100%;
+  margin-bottom: 14px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 0; }
+
+[data-type="blockit/section"]:hover > .editor-block-list__block-edit > div > div > .blockit-section-button-select,
+[data-type="blockit/section-column"]:hover > .editor-block-list__block-edit > div > div > .blockit-column-button-select {
+  visibility: visible;
+  opacity: 1; }
+
+.blockit-section-button-select:hover,
+.blockit-column-button-select:hover {
+  background-color: #0073aa; }
+
+.blockit-section-layout {
+  padding: 25px; }
+  .blockit-section-layout .blockit-section-layout-picker {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: center;
+        justify-content: center;
+    margin-right: -7px;
+    margin-left: -7px; }
+    .blockit-section-layout .blockit-section-layout-picker .blockit-section-layout-picker-btn {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      width: 85px;
+      padding: 0;
+      margin-right: 7px;
+      margin-bottom: 14px;
+      margin-left: 7px;
+      overflow: hidden;
+      cursor: pointer;
+      background: none;
+      border: 2px solid rgba(79, 89, 105, 0.75);
+      border-radius: 4px;
+      transition: .15s border-color, .15s background-color; }
+      .blockit-section-layout .blockit-section-layout-picker .blockit-section-layout-picker-btn .blockit-col {
+        height: 40px;
+        border-right: 2px solid rgba(79, 89, 105, 0.75);
+        transition: .15s border-color; }
+        .blockit-section-layout .blockit-section-layout-picker .blockit-section-layout-picker-btn .blockit-col:last-of-type {
+          border-right: none; }
+      .blockit-section-layout .blockit-section-layout-picker .blockit-section-layout-picker-btn:hover, .blockit-section-layout .blockit-section-layout-picker .blockit-section-layout-picker-btn:focus {
+        background-color: #fff;
+        border-color: #4f5969; }
+        .blockit-section-layout .blockit-section-layout-picker .blockit-section-layout-picker-btn:hover .blockit-col, .blockit-section-layout .blockit-section-layout-picker .blockit-section-layout-picker-btn:focus .blockit-col {
+          border-color: #4f5969; }
+
+.wp-block-blockit-section {
+  border: 1px dashed;
+  position: relative;
+  display: block; }
+  .wp-block-blockit-section > .editor-inner-blocks > .editor-block-list__layout {
+    background: #cec7c757;
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+    margin-left: 0;
+    margin-right: 0; }
+
+.blockit-col {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 1;
+      flex: 1;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  width: 0; }
+  .blockit-col > .editor-block-list__block-edit {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important; }
+    .blockit-col > .editor-block-list__block-edit > [data-block] {
+      -ms-flex: 100%;
+          flex: 100%; }
+    .blockit-col > .editor-block-list__block-edit > .editor-block-contextual-toolbar + [data-block] {
+      margin-left: 30px; }
+
+.blockit-col {
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  max-width: 100%; }
+
+.blockit-col-1 {
+  -ms-flex: 0 0 8.33333%;
+      flex: 0 0 8.33333%;
+  max-width: 8.33333%; }
+
+.blockit-col-2 {
+  -ms-flex: 0 0 16.66667%;
+      flex: 0 0 16.66667%;
+  max-width: 16.66667%; }
+
+.blockit-col-3 {
+  -ms-flex: 0 0 25%;
+      flex: 0 0 25%;
+  max-width: 25%; }
+
+.blockit-col-4 {
+  -ms-flex: 0 0 33.33333%;
+      flex: 0 0 33.33333%;
+  max-width: 33.33333%; }
+
+.blockit-col-5 {
+  -ms-flex: 0 0 41.66667%;
+      flex: 0 0 41.66667%;
+  max-width: 41.66667%; }
+
+.blockit-col-6 {
+  -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+  max-width: 50%; }
+
+.blockit-col-7 {
+  -ms-flex: 0 0 58.33333%;
+      flex: 0 0 58.33333%;
+  max-width: 58.33333%; }
+
+.blockit-col-8 {
+  -ms-flex: 0 0 66.66667%;
+      flex: 0 0 66.66667%;
+  max-width: 66.66667%; }
+
+.blockit-col-9 {
+  -ms-flex: 0 0 75%;
+      flex: 0 0 75%;
+  max-width: 75%; }
+
+.blockit-col-10 {
+  -ms-flex: 0 0 83.33333%;
+      flex: 0 0 83.33333%;
+  max-width: 83.33333%; }
+
+.blockit-col-11 {
+  -ms-flex: 0 0 91.66667%;
+      flex: 0 0 91.66667%;
+  max-width: 91.66667%; }
+
+.blockit-col-12 {
+  -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+  max-width: 100%; }
+
+@media (max-width: 992px) {
+  .blockit-col-lg {
+    -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    max-width: 100%; }
+  .blockit-col-lg-1 {
+    -ms-flex: 0 0 8.33333%;
+        flex: 0 0 8.33333%;
+    max-width: 8.33333%; }
+  .blockit-col-lg-2 {
+    -ms-flex: 0 0 16.66667%;
+        flex: 0 0 16.66667%;
+    max-width: 16.66667%; }
+  .blockit-col-lg-3 {
+    -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+    max-width: 25%; }
+  .blockit-col-lg-4 {
+    -ms-flex: 0 0 33.33333%;
+        flex: 0 0 33.33333%;
+    max-width: 33.33333%; }
+  .blockit-col-lg-5 {
+    -ms-flex: 0 0 41.66667%;
+        flex: 0 0 41.66667%;
+    max-width: 41.66667%; }
+  .blockit-col-lg-6 {
+    -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+    max-width: 50%; }
+  .blockit-col-lg-7 {
+    -ms-flex: 0 0 58.33333%;
+        flex: 0 0 58.33333%;
+    max-width: 58.33333%; }
+  .blockit-col-lg-8 {
+    -ms-flex: 0 0 66.66667%;
+        flex: 0 0 66.66667%;
+    max-width: 66.66667%; }
+  .blockit-col-lg-9 {
+    -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+    max-width: 75%; }
+  .blockit-col-lg-10 {
+    -ms-flex: 0 0 83.33333%;
+        flex: 0 0 83.33333%;
+    max-width: 83.33333%; }
+  .blockit-col-lg-11 {
+    -ms-flex: 0 0 91.66667%;
+        flex: 0 0 91.66667%;
+    max-width: 91.66667%; }
+  .blockit-col-lg-12 {
+    -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+    max-width: 100%; } }
+
+@media (max-width: 768px) {
+  .blockit-col-md {
+    -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    max-width: 100%; }
+  .blockit-col-md-1 {
+    -ms-flex: 0 0 8.33333%;
+        flex: 0 0 8.33333%;
+    max-width: 8.33333%; }
+  .blockit-col-md-2 {
+    -ms-flex: 0 0 16.66667%;
+        flex: 0 0 16.66667%;
+    max-width: 16.66667%; }
+  .blockit-col-md-3 {
+    -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+    max-width: 25%; }
+  .blockit-col-md-4 {
+    -ms-flex: 0 0 33.33333%;
+        flex: 0 0 33.33333%;
+    max-width: 33.33333%; }
+  .blockit-col-md-5 {
+    -ms-flex: 0 0 41.66667%;
+        flex: 0 0 41.66667%;
+    max-width: 41.66667%; }
+  .blockit-col-md-6 {
+    -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+    max-width: 50%; }
+  .blockit-col-md-7 {
+    -ms-flex: 0 0 58.33333%;
+        flex: 0 0 58.33333%;
+    max-width: 58.33333%; }
+  .blockit-col-md-8 {
+    -ms-flex: 0 0 66.66667%;
+        flex: 0 0 66.66667%;
+    max-width: 66.66667%; }
+  .blockit-col-md-9 {
+    -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+    max-width: 75%; }
+  .blockit-col-md-10 {
+    -ms-flex: 0 0 83.33333%;
+        flex: 0 0 83.33333%;
+    max-width: 83.33333%; }
+  .blockit-col-md-11 {
+    -ms-flex: 0 0 91.66667%;
+        flex: 0 0 91.66667%;
+    max-width: 91.66667%; }
+  .blockit-col-md-12 {
+    -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+    max-width: 100%; } }
+
+@media (max-width: 576px) {
+  .blockit-col-sm {
+    -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    max-width: 100%; }
+  .blockit-col-sm-1 {
+    -ms-flex: 0 0 8.33333%;
+        flex: 0 0 8.33333%;
+    max-width: 8.33333%; }
+  .blockit-col-sm-2 {
+    -ms-flex: 0 0 16.66667%;
+        flex: 0 0 16.66667%;
+    max-width: 16.66667%; }
+  .blockit-col-sm-3 {
+    -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+    max-width: 25%; }
+  .blockit-col-sm-4 {
+    -ms-flex: 0 0 33.33333%;
+        flex: 0 0 33.33333%;
+    max-width: 33.33333%; }
+  .blockit-col-sm-5 {
+    -ms-flex: 0 0 41.66667%;
+        flex: 0 0 41.66667%;
+    max-width: 41.66667%; }
+  .blockit-col-sm-6 {
+    -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+    max-width: 50%; }
+  .blockit-col-sm-7 {
+    -ms-flex: 0 0 58.33333%;
+        flex: 0 0 58.33333%;
+    max-width: 58.33333%; }
+  .blockit-col-sm-8 {
+    -ms-flex: 0 0 66.66667%;
+        flex: 0 0 66.66667%;
+    max-width: 66.66667%; }
+  .blockit-col-sm-9 {
+    -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+    max-width: 75%; }
+  .blockit-col-sm-10 {
+    -ms-flex: 0 0 83.33333%;
+        flex: 0 0 83.33333%;
+    max-width: 83.33333%; }
+  .blockit-col-sm-11 {
+    -ms-flex: 0 0 91.66667%;
+        flex: 0 0 91.66667%;
+    max-width: 91.66667%; }
+  .blockit-col-sm-12 {
+    -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+    max-width: 100%; } }
+
+.wp-block-blockit-section > .editor-inner-blocks > .editor-block-list__layout > .blockit-col-align-self-start > .editor-block-list__block-edit > [data-block] {
+  -ms-flex-item-align: start;
+      align-self: flex-start; }
+
+.wp-block-blockit-section > .editor-inner-blocks > .editor-block-list__layout > .blockit-col-align-self-center > .editor-block-list__block-edit > [data-block] {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center; }
+
+.wp-block-blockit-section > .editor-inner-blocks > .editor-block-list__layout > .blockit-col-align-self-end > .editor-block-list__block-edit > [data-block] {
+  -ms-flex-item-align: end;
+      align-self: flex-end; }
