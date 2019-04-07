@@ -24,7 +24,7 @@ const ResponsiveTabPanel = ( props ) => {
 		activeClass = 'is-active',
 		orientation = 'horizontal',
 	} = props;
-console.log(props)
+
 	if ( ! blockitVariables || ! blockitVariables.media_sizes || ! Object.keys( blockitVariables.media_sizes ).length ) {
 		return __( 'No media sizes found.' );
 	}

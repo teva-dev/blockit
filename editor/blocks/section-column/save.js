@@ -15,10 +15,6 @@ const { InnerBlocks } = wp.editor;
 
 const SectionColumnBlockSave = props => {
 
-	const {
-
-	} = props.attributes;
-
 	let className = getColClass( props );
 
 	return (

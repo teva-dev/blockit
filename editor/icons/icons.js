@@ -4,7 +4,7 @@
 const { Path, SVG } = wp.components;
 
 /**
- * Icons
+ * General Icon
  */
 export const blockitIcon = () => {
 	return (
@@ -18,6 +18,34 @@ export const blockitIcon = () => {
 			<Path d="M10.798 11.707c0 0.194-0.157 0.351-0.351 0.351s-0.351-0.157-0.351-0.351c0-0.194 0.157-0.351 0.351-0.351s0.351 0.157 0.351 0.351z" />
 			<Path d="M11.918 11.049c0 0.194-0.157 0.351-0.351 0.351s-0.351-0.157-0.351-0.351c0-0.194 0.157-0.351 0.351-0.351s0.351 0.157 0.351 0.351z" />
 			<Path d="M8.773 7.877c-0.001-0.003-0.002-0.005-0.002-0.009s0.001-0.006 0.002-0.009l-0 0c0.047-0.081 0.089-0.164 0.132-0.247 0.019-0.038 0.036-0.079 0.057-0.115 0.275-0.498 0.379-0.99 1.033-1.064h0.045c0 0 0.001 0 0.001 0 0.487 0 0.884 0.382 0.91 0.862l0 0.002c-0.678 0.124-1.261 0.277-1.827 0.468l0.092-0.027-0.275 0.096-0.1 0.036-0.045 0.017s-0.023 0-0.023-0.011z" />
+		</SVG>
+	);
+};
+
+/**
+ * Vertical alignment icons
+ */
+export const verticalTop = () => {
+	return (
+		<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
+			<rect x="2.75" y="2.75" width="18.5" height="18.5" rx="3.25" stroke="currentColor" fill="transparent" stroke-width="1.5"/>
+			<line x1="6.5" y1="6.5" x2="17.5" y2="6.5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+		</SVG>
+	);
+};
+export const verticalCenter = () => {
+	return (
+		<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
+			<rect x="2.75" y="2.75001" width="18.5" height="18.5" rx="3.25" stroke="currentColor" fill="transparent" stroke-width="1.5"/>
+			<line x1="6.5" y1="12" x2="17.5" y2="12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+		</SVG>
+	);
+};
+export const verticalBottom = () => {
+	return (
+		<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
+			<rect x="2.75" y="2.75" width="18.5" height="18.5" rx="3.25" stroke="currentColor" fill="transparent" stroke-width="1.5"/>
+			<line x1="6.5" y1="17.5" x2="17.5" y2="17.5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
 		</SVG>
 	);
 };

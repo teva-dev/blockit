@@ -1,0 +1,16 @@
+///
+// Vertical alignment control.
+///
+.blockit-vertical-alignment-control {
+
+	.components-base-control__field {
+		display: flex;
+    align-items: center;
+		justify-content: space-between;
+		
+		.components-toolbar {
+			border: none;
+		}
+	}
+
+}
